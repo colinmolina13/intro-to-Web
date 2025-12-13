@@ -1,0 +1,314 @@
+/* -----------------------------------------
+  CSS RESET
+  ------------------------------------------*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body{
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes:none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* -----------------------------------------
+  TABLE OF CONTENTS
+  ------------------------------------------
+  1. Color Library
+  2. General Styles
+  3. Grid Styles
+  4. Navigation and Buttons
+  5. Hero and Header
+  6. Divider
+  7. About
+  8. Work Section
+  9. Contact
+  10. Footer 
+  ----------------------------------------*/
+
+/* -----------------------------------------
+  1. COLOR LIBRARY
+  ------------------------------------------*/
+  
+  :root{
+      --primary: hsl(100, 100%, 100%);
+      --primary-bg: hsl(201, 56%, 63%);
+      --primary-dk: hsl(204, 46%, 45%);
+      --accent: hsl(247, 82%, 56%);
+      --accent-lt: hsl(246, 80%, 90%);
+      --accent-dk: hsl(247, 82%, 36%);
+      --neutral-lt: hsl(31, 100%, 86%);
+      --neutral-dk: hsl(38, 87%, 71%);
+      --neutral-dkst: hsl(30, 61%, 55%);
+
+
+  }
+
+
+/* -----------------------------------------
+  2. GENERAL STYLES (element selectors)
+  ----------------------------------------*/
+body {
+	background-color: var(--neutral-lt);
+  font: normal 400 16px/20px 'Nunito Sans', Arial, sans-serif;
+}
+*, /* THIS IS A UNIVERSAL SELECTOR */
+*:before,
+*:after{
+  box-sizing: border-box;
+  transition: .7s; /* NEW! This will enable smooth transitions on all interactions.
+  */
+}
+h1{
+  font-size: 38px;
+  line-height: 48px;
+}
+h3{
+  font-size: 30px;
+  line-height: 64px;
+  margin-bottom: 16px;
+}
+header nav ul{
+  list-style-type: none;
+  font-weight: 800;
+  gap: 1em;
+}
+ul li a{
+  text-decoration: none;
+}
+p{ 
+  margin-bottom: 16px;
+}
+.uppercase{
+  text-transform: uppercase;
+}
+/* -----------------------------------------
+  3. GRID STYLES (positioning and alignment)
+  ------------------------------------------*/
+  .container{
+    width:1180px;
+    max-width: 90%;
+    margin: auto;
+    padding: 32px 0;
+  }
+  .flex{
+    display: flex;
+  }
+  .jc-sb{
+    justify-content: space-between;
+  }
+  .jc-sa{
+    justify-content: space-around;
+  }
+  .jc-fe{
+    justify-content: flex-end;
+  }
+  .ai-center{
+    align-items: center;
+  }
+  .col-1-2{
+    width: 50vw;
+  }
+/* -----------------------------------------
+  4. NAVIGATION AND BUTTONS
+  ------------------------------------------*/
+  nav a{
+    color: var(#000000);
+    }
+  nav a:hover{
+    color: var(--primary-bg);
+  }
+  .button{
+    display: block;
+    padding: 16px;
+    min-width: 160px;
+    max-width: 8%;
+    background: var(--primary-dk);
+    border-radius: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 24px;
+  }
+  .button:hover{
+    background-color: var(--primary-bg);
+    cursor: pointer;
+  }
+/* -----------------------------------------
+  5. HEADER AND HERO
+  ------------------------------------------*/
+  .hdr-hero{
+    background: var(--primary) url(images/stack-of-magazines-pencils-in-gray-cup-6440.jpg) 
+     top/cover no-repeat;
+  }
+  header h1{
+    font: 400 normal 28px/24px "Anton", Arial, sans-serif;
+    color: var(#000000);
+  }
+  .hero{
+    height: 65vh;
+  }
+  .hero div{
+    width: 33.33vw;
+  }
+/* -----------------------------------------
+  6. DIVIDER
+  ------------------------------------------*/
+  .stats{
+    background: #2B5E80;
+    padding: 50px 0;
+    color: var(--primary);
+  }
+  .stats .flex{
+    gap: 10px;
+  }
+/* -----------------------------------------
+  7. ABOUT
+  ------------------------------------------*/
+.about{
+  position: relative;
+  background-color: var(--primary-bg);
+}
+
+.about .container{
+  display: flex;
+}
+
+.about .container div:first-child{
+  width: 50%;
+  padding-right: 15%;
+}
+
+.about .container div:nth-of-type(2){
+  width: 50%;
+  min-height: 400px; /* gives the image visible height */
+  background-image: url(images/blur-cellphone-close-up-device-196646_GS.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+/* -----------------------------------------
+  8. WORK
+  ------------------------------------------*/
+  .work .flex{
+    width: 100vw;
+    flex-wrap: wrap;
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+  .work .flex a{
+    display: inline-flex;
+  }
+  .work, .contact{
+    text-align: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  .work div img{
+    width: 25vw;
+  }
+  .work{
+    background: var(--primary-dk);
+  }
+  .work a{
+    text-decoration: none;
+    color: var(--primary-dk);
+    font-weight: 600;
+  }
+  .work a:hover{
+    color: var(--accent);
+  }
+  .work a img:hover{
+    filter: blur(5px);
+    cursor: zoom-in;
+  }
+/* -----------------------------------------
+  9. CONTACT
+  ------------------------------------------*/
+  .contact{
+    width: 50%;
+    background-color: var(--neutral-lt);
+  }
+  .contact form{
+    padding-top: 8px;
+  }
+  .contact form input, textarea, form div{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: none;
+    border-radius: 4px;
+    font: 400 14px 'Nunito Sans', Arial, Helvetica, sans-serif;
+    background-color: var(--neutral-dk);
+  }
+  form div{
+    padding: 0;
+    column-gap: 12px;
+    margin-bottom: 0;
+  }
+  input.button{
+    margin: auto;
+    color: #000000;
+  }
+/* -----------------------------------------
+  10. FOOTER
+  ------------------------------------------*/
+  footer{
+    background: #000000;
+    color: var(--primary);
+  }
+  footer a{
+    color: var(--primary);
+  }
+  footer a:hover{
+    color: var(--primary);
+  }
+  footer i{
+    font-size: 15px;
+    margin-left: 0;
+    margin-right: 5px;
+  }
